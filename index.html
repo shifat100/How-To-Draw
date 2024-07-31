@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width= device-width, initial-scale=1.0">
+</head>
+<body id="app">
+  <div class="blur">
+    <div class="header"></div>
+    <table>
+      <tr>
+        <td> Loading... </td>
+      </tr>
+    </table>
+    </center>
+    <div class="footer"></div>
+  </div>
+</body>
+<script src="jquery.min.js"></script>
+<script src="script.js"></script>
+<script src="https://static.kaiads.com/ads-sdk/ads-sdk.v5.min.js"></script>
+<script src="kaiads.v5.min.js"></script>
+<script>
+  document.body.addEventListener('DOMContentLoaded', () => {
+    getKaiAd({
+      publisher: '080b82ab-b33a-4763-a498-50f464567e49',
+      app: 'HowToDraw',
+      slot: 'HowToDraw',
+      onerror: err => console.error('Custom catch:', err),
+      onready: ad => {
+        ad.call('display');
+      }
+    })
+  });
+</script>
+</html>
